@@ -34,7 +34,6 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     public TelaLogin() {
-        this.setLocationRelativeTo(null);
         initComponents();
         
         conexao = ModuloConexao.conector();
@@ -68,11 +67,20 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
+        txtUsuario.setText("marioleite");
+
         jLabel1.setText("Usuário");
 
         jLabel2.setText("Senha");
 
         lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sistema/icones/desconectado.png"))); // NOI18N
+
+        txtSenha.setText("101010");
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,11 +122,16 @@ public class TelaLogin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConectarActionPerformed
         this.logar();
     }//GEN-LAST:event_btnConectarActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     
     public static void main(String args[]) {
