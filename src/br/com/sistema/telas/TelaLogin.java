@@ -20,8 +20,15 @@ public class TelaLogin extends javax.swing.JFrame {
             rs = pst.executeQuery();
             
             if (rs.next()) {
+                String perfil = rs.getString(6);
                 TelaPrincipal telaPrincipal = new TelaPrincipal();
                 telaPrincipal.setVisible(true);
+                
+                if (perfil.equals("admin")) {
+                    TelaPrincipal.menuRelatorioServico.setEnabled(true);
+                    TelaPrincipal.menuCadastroUsuario.setEnabled(true);
+                    telaPrincipal.lblUsuario.setText(rs.getString(2));
+                }
                 this.dispose();
                 conexao.close();
             } else {
